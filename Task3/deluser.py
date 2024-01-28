@@ -1,9 +1,16 @@
-# Importing the rot13, read_file, and write_file functions
+# Importing the rot13, read_file, and write_file functions from utils module
 from utils import rot13, read_file, write_file
 import maskpass
 
 
 def del_user():
+    """
+    Allows a user to delete a user.
+    Deletes a user by taking input for username and password. 
+    The password is masked using the 'maskpass' module and encrypted using ROT13.
+    Updates the 'passwd.txt' file with the modified user data.
+    """
+
     # Reading existing user data from the file
     saved_user_data = read_file()
 
@@ -29,5 +36,6 @@ def del_user():
         print("Username and password do not match.")
 
 
+# Calling the del_user function
 if __name__ == "__main__":
     del_user()
